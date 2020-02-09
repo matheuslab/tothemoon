@@ -11,6 +11,20 @@ pipeline:
     when:
       event: push
 
+  checkstyle-main:
+    image: openjdk:11.0.2
+    commands:
+      - ./gradlew checkstyleMain
+    when:
+      event: push
+
+  checkstyle-test:
+    image: openjdk:11.0.2
+    commands:
+      - ./gradlew checkstyleTest
+    when:
+      event: push
+
   tests:
     image: openjdk:11.0.2
     commands:
