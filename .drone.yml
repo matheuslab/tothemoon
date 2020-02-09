@@ -1,0 +1,19 @@
+clone:
+  clone:
+    image: plugins/git
+    depth: 20
+
+pipeline:
+  build:
+    image: openjdk:11.0.2
+    commands:
+      - ./gradlew clean assemble
+    when:
+      event: push
+
+  tests:
+    image: openjdk:11.0.2
+    commands:
+      - ./gradlew test
+    when:
+      event: push
