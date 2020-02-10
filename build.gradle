@@ -3,10 +3,12 @@ plugins {
 	id 'io.spring.dependency-management' version '1.0.9.RELEASE'
 	id 'java'
 	id 'checkstyle'
-
+	id 'jacoco'
 }
 
 apply from: "${rootProject.rootDir}/config/checkstyle.gradle"
+apply from: "${rootProject.rootDir}/config/jacoco.gradle"
+apply from: "${rootProject.rootDir}/config/tests.gradle"
 
 group = 'com.cartola.tothemoon'
 version = '0.0.1-SNAPSHOT'

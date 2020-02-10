@@ -28,6 +28,7 @@ pipeline:
   tests:
     image: openjdk:11.0.2
     commands:
-      - ./gradlew test
+      - ./gradlew test jacocoTestCoverageVerification
     when:
       event: push
+      
