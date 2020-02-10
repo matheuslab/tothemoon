@@ -31,4 +31,3 @@ pipeline:
       - ./gradlew test jacocoTestCoverageVerification
     when:
       event: push
-      
